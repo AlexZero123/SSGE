@@ -1,0 +1,46 @@
+[
+	{
+		"idFormulario" : 1,
+		"Nome" : "Cliente"
+	},
+	{
+		"idFormulario" : 2,
+		"Nome" : "Fornecedor"
+	},
+	{
+		"idFormulario" : 3,
+		"Nome" : "Colaborador"
+	},
+	{
+		"idFormulario" : 4,
+		"Nome" : "Documento"
+	},
+	{
+		"idFormulario" : 5,
+		"Nome" : "Produto"
+	},
+	{
+		"idFormulario" : 6,
+		"Nome" : "Serviço"
+	},
+	{
+		"idFormulario" : 7,
+		"Nome" : "Banco"
+	},
+	{
+		"idFormulario" : 8,
+		"Nome" : "Norma/Certificação"
+	},
+	{
+		"idFormulario" : 9,
+		"Nome" : "OS"
+	},
+	{
+		"idFormulario" : 10,
+		"Nome" : "Demonstrativo"
+	},
+	{
+		"idFormulario" : 11,
+		"Nome" : "Atualizar"
+	}
+]

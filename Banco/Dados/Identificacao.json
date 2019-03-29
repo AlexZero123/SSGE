@@ -1,0 +1,20 @@
+[
+	{
+		"idIdentificacao" : 9999,
+		"cpf" : "43080159870",
+		"nisPisPasepInss" : null,
+		"ctps" : null,
+		"serie" : null,
+		"dtExpedicaoCtps" : null,
+		"rg" : "382396480",
+		"dtExpedicaoRg" : null,
+		"cnh" : null,
+		"categoriaCnh" : null,
+		"dtValidade" : null,
+		"tituloEleitor" : null,
+		"zona" : null,
+		"secao" : null,
+		"numReservista" : null,
+		"categoriaReservista" : null
+	}
+]

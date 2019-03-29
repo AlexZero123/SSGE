@@ -1,0 +1,50 @@
+[
+	{
+		"idFuncao" : 1,
+		"nome" : "Administrativo",
+		"cbo" : null,
+		"obs" : null
+	},
+	{
+		"idFuncao" : 2,
+		"nome" : "Analista da Qualidade",
+		"cbo" : null,
+		"obs" : null
+	},
+	{
+		"idFuncao" : 3,
+		"nome" : "Diretor Comercial",
+		"cbo" : null,
+		"obs" : null
+	},
+	{
+		"idFuncao" : 4,
+		"nome" : "Diretor Operacional",
+		"cbo" : null,
+		"obs" : null
+	},
+	{
+		"idFuncao" : 5,
+		"nome" : "Gestor Comercial",
+		"cbo" : null,
+		"obs" : null
+	},
+	{
+		"idFuncao" : 6,
+		"nome" : "Inspetor da Qualidade",
+		"cbo" : null,
+		"obs" : null
+	},
+	{
+		"idFuncao" : 7,
+		"nome" : "Inspetor de Solda",
+		"cbo" : null,
+		"obs" : null
+	},
+	{
+		"idFuncao" : 9999,
+		"nome" : "CONTROLE",
+		"cbo" : null,
+		"obs" : null
+	}
+]

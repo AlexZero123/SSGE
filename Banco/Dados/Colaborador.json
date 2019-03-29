@@ -1,0 +1,32 @@
+[
+	{
+		"idColaborador" : 9999,
+		"nome" : "Alexsandro dos Santos Junior",
+		"sexo" : "M",
+		"dtNasc" : "2000-06-02",
+		"localNasc" : "Itaquaquecetuba",
+		"estdCivil" : "S",
+		"etinia" : "Pardo",
+		"nomeMae" : "Rosemary Pinheiro de Oliveira Dantas",
+		"nomePai" : "Alexsandro dos Santos",
+		"pais" : "Brasil",
+		"endereco" : null,
+		"complemento" : null,
+		"resPropria" : null,
+		"resFgts" : null,
+		"Identificacao_idIdentificacao" : 9999,
+		"escolaridade" : null,
+		"ContatoInt_idContato" : 9999,
+		"ColaboradorTipo_idColaboradorTipo" : 1,
+		"Funcao_idFuncao" : 9999,
+		"defMotor" : 0,
+		"defVisual" : 0,
+		"defAuditiva" : 0,
+		"obsDef" : null,
+		"empresa" : null,
+		"cnpj" : null,
+		"obsEmpresa" : null,
+		"remuneracaoEmpresa" : null,
+		"sigla" : "AJ"
+	}
+]

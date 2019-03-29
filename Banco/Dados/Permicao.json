@@ -1,0 +1,54 @@
+[
+	{
+		"idPermicao" : 1,
+		"nome" : "ALL"
+	},
+	{
+		"idPermicao" : 2,
+		"nome" : "Cliente"
+	},
+	{
+		"idPermicao" : 3,
+		"nome" : "Colaborador"
+	},
+	{
+		"idPermicao" : 4,
+		"nome" : "Fornecedor"
+	},
+	{
+		"idPermicao" : 5,
+		"nome" : "Documento"
+	},
+	{
+		"idPermicao" : 6,
+		"nome" : "Produto"
+	},
+	{
+		"idPermicao" : 7,
+		"nome" : "Serviço"
+	},
+	{
+		"idPermicao" : 8,
+		"nome" : "Banco"
+	},
+	{
+		"idPermicao" : 9,
+		"nome" : "Norma/Certificação"
+	},
+	{
+		"idPermicao" : 10,
+		"nome" : "OS"
+	},
+	{
+		"idPermicao" : 11,
+		"nome" : "Demonstrativo"
+	},
+	{
+		"idPermicao" : 12,
+		"nome" : "Cadastro"
+	},
+	{
+		"idPermicao" : 13,
+		"nome" : "Análise"
+	}
+]
