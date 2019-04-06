@@ -1,0 +1,22 @@
+{
+  "name": "electron-quick-start",
+  "version": "0.1.0",
+  "description": "An enterprise management web-mobile application with html e javascript",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": "https://github.com/AlexZero123/SSGE/tree/master/Template",
+  "keywords": [
+    "Electron",
+    "html",
+    "javascript",
+    "web-mobile",
+    "demo"
+  ],
+  "author": "Alexsandro dos Santos Junior",
+  "license": "CC0-1.0",
+  "devDependencies": {
+    "electron": "^4.0.7"
+  }
+}
