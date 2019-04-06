@@ -890,7 +890,7 @@
     secondStep: 15,
     showSeconds: false,
     showInputs: true,
-    showMeridian: true,
+    showMeridian: false,
     template: 'dropdown',
     appendWidgetTo: '.bootstrap-timepicker',
 	upArrowStyle: 'glyphicon glyphicon-chevron-up',
