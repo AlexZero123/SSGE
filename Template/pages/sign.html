@@ -18,8 +18,6 @@
   <link rel="stylesheet" href="../plugins/datepicker/datepicker3.css">
   <!-- iCheck for checkboxes and radio inputs -->
   <link rel="stylesheet" href="../plugins/iCheck/all.css">
-  <!-- bootstrap wysihtml5 - text editor -->
-  <link rel="stylesheet" href="../plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
   <!-- Bootstrap Color Picker -->
   <link rel="stylesheet" href="../plugins/colorpicker/bootstrap-colorpicker.min.css">
   <!-- Bootstrap time Picker -->
@@ -358,7 +356,7 @@
           <div class="row">
             <div class="col-md-12">
               <div class="nav-tabs-custom">
-                <ul class="nav nav-tabs"  onclick="clearInput(); clearSelect(); clearTextarea(); clearChecks();">
+                <ul class="nav nav-tabs">
                   <li><a href="#cliente" data-toggle="tab">Cliente</a></li>
                   <li><a href="#fornecedor" data-toggle="tab">Fornecedor</a></li>
                   <li><a href="#colaborador" data-toggle="tab">Colaborador</a></li>
@@ -366,11 +364,10 @@
                   <li><a href="#produto" data-toggle="tab">Produto</a></li>
                   <li><a href="#banco" data-toggle="tab">Banco</a></li>
                   <li><a href="#servico" data-toggle="tab">Serviço</a></li>
-                  <li class="active"><a href="#proposta" data-toggle="tab">Proposta de Serviço</a></li>
                   <li><a href="#norma" data-toggle="tab">Norma/Certificação</a></li>
-                  <li><a href="#os" data-toggle="tab">OS</a></li>
+                  <li class="active"><a href="#os" data-toggle="tab">OS</a></li>
                   <li><a href="#demonstrativo" data-toggle="tab">Demonstrativo</a></li>
-                  <li><a href="#atualizar" data-toggle="tab">Atualizar</a></li>
+                  <li><a href="#Atualizar" data-toggle="tab">Atualizar</a></li>
                 </ul>
                 <div class="tab-content">
                   <div class="tab-pane" id="cliente">
@@ -381,7 +378,7 @@
                         <div class="form-group">
                             <label for="inputEmpresa" class="col-sm-2 control-label">Razão Social</label>
                             <div id="nomeEmpresa" class="col-sm-5">
-                                <input type="text" class="form-control" id="inputEmpresa" placeholder="Nome" maxlength="45" name="" required>
+                                <input type="text" class="form-control" id="inputEmpresa" placeholder="Nome" maxlength="45" required>
                             </div>
                             <div class="col-sm-1">
 
@@ -487,6 +484,36 @@
                         <div class="form-group">
                             <div id="reabilitacao" class="col-sm-12">
                                 <textarea id="inputReabilitacao" class="textarea" style="width: 100%; height: 150px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;" maxlength="800"></textarea>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="form-group">
+                            <h4 class="col-sm-9"><b>Serviços</b></h4>
+                        </div>
+                        <div class="form-group">
+                            <div id="servico1" class="col-sm-4">
+                                <center><label onclick="show_hide('servicoInput1');"><input type="checkbox" class="minimal">Check 1</label></center>
+                            </div>
+                            <div id="servico2" class="col-sm-4">
+                                <center><label onclick="show_hide('servicoInput2');"><input type="checkbox" class="minimal">Check 2</label></center>
+                            </div>
+                            <div id="servico3" class="col-sm-4">
+                                <center><label onclick="show_hide('servicoInput3');"><input type="checkbox" class="minimal">Check 3</label></center>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            
+                            <div style="display: none" id="servicoInput1" class="col-sm-4">
+                                <label class="col-sm-6 col-form-label">Serviço 1</label>
+                                <center><input class="form-control" type="number" placeholder="Preço"></center>
+                            </div>
+                            <div style="display: none" id="servicoInput2" class="col-sm-4">
+                                <label class="col-sm-6 col-form-label">Serviço 2</label>
+                                <center><input class="form-control" type="number" placeholder="Preço"></center>
+                            </div>
+                            <div style="display: none" id="servicoInput3" class="col-sm-4">
+                                <label class="col-sm-6 col-form-label">Serviço 3</label>
+                                <center><input class="form-control" type="number" placeholder="Preço"></center>
                             </div>
                         </div>
                         <hr>
@@ -774,7 +801,6 @@
                             <label class="col-sm-3 control-label"><i>Checkbox</i></label>
                             <label class="col-sm-3 control-label"><i>Checkbox</i></label>
                             <label class="col-sm-3 control-label"><i>Checkbox</i></label>
-                            <label class="col-sm-3 control-label"><i>Checkbox</i></label>
                         </div>
                         <label for="dtValidadeServico" class="col-sm-1 control-label">Validade</label>
                         <div class="col-sm-2">
@@ -787,11 +813,12 @@
                         </div>
                         <div class="form-group">
                             <label for="comboClassificacaoSevico" class="col-sm-2 control-label">Classificação</label>
-                            <div class="col-sm-2">
-                              <select id="comboClassificacaoServico" class="form-control select2" style="width: 100%;" required="">
-                              <option></option>
-                              </select>
-                            </div>
+                        <div class="col-sm-2">
+                          <select id="comboClassificacaoServico" class="form-control select2" style="width: 100%;" required="">
+                          <option></option>
+                          </select>
+                        </div>
+                        
                         </div>
                     </form>
                   </div>
@@ -827,29 +854,29 @@
                         <label for="comboCivil" class="col-sm-1 control-label"><center>Estado Civil</center></label>
                         <div class="col-sm-2">
                           <select id="comboCivil" class="form-control select2" style="width: 100%;">
-                          <option value="S">Solteiro</option>
-                          <option value="C">Casado</option>
-                          <option value="D">Divorciado</option>
-                          <option value="V">Viúvo</option>
-                          <option value="U">União Estável</option>
-                          <option value="O">Outros</option>
+                          <option>Solteiro</option>
+                          <option>Casado</option>
+                          <option>Divorciado</option>
+                          <option>Viúvo</option>
+                          <option>União Estável</option>
+                          <option>Outros</option>
                           </select>
                         </div>
                         <label for="comboEscola" class="col-sm-1 control-label"><center>Escolaridade</center></label>
-                        <div class="col-sm-5">
+                        <div class="col-sm-2">
                           <select id="comboEscola" class="form-control select2" style="width: 100%;">
-                          <option value="01">Analfabeto</option>
-                          <option value="02">Até a 4º série incompleta do ensino fundamental (antigo 1º grau ou primário)</option>
-                          <option value="03">4º série completa do ensino fundamental (antigo 1º grau ou ginásio)</option>
-                          <option value="04">Da 5º a 8º série do ensino fundamental (antigo 1º grau ou ginásio)</option>
-                          <option value="05">Ensino fundamental completo (antigo 1º grau, primário ou ginásio)</option>
-                          <option value="06">Ensino médio incompleto (antigo 2º grau, secundário ou colegial)</option>
-                          <option value="07">Ensino médico completo (antigo 2º grau, secundário ou colegial) </option>
-                          <option value="08">Educação Superior incompleto</option>
-                          <option value="09">Educação Superior completa</option>
-                          <option value="10">Pós Graduação</option>
-                          <option value="11">Mestrado</option>
-                          <option value="12">Doutorado</option>
+                          <option>01</option>
+                          <option>02</option>
+                          <option>03</option>
+                          <option>04</option>
+                          <option>05</option>
+                          <option>06</option>
+                          <option>07</option>
+                          <option>08</option>
+                          <option>09</option>
+                          <option>10</option>
+                          <option>11</option>
+                          <option>12</option>
                           </select>
                         </div>
                         <label for="comboEtinia" class="col-sm-1 control-label"><center>Etinia</center></label>
@@ -863,6 +890,10 @@
                           <option>Parda</option>
                           </select>
                         </div>
+                          <label for="inputSiglaEmpresa" class="col-sm-1 control-label">Sigla</label>
+                          <div id="siglaEmpresa" class="col-sm-2">
+                              <input type="text" class="form-control" id="inputSiglaEmpresa" maxlength="45" required>
+                          </div>
                       </div>
                         <div class="form-group">
                             <label for="inputMae" class="col-sm-1 control-label">Nome da Mãe</label>
@@ -877,12 +908,8 @@
                         <div class="form-group">
                             <label for="inputLcNasc" class="col-sm-2 control-label">Local de Nascimento</label>
                             <div id="lcNasc" class="col-sm-3">
-                                <input type="texto" class="form-control" id="inputLcNasc" placeholder="Cidade-UF" maxlength="45">
+                                <input type="texto" class="form-control" id="inputLcNasc" placehold="Cidade-UF" maxlength="45">
                             </div>
-                            <label for="inputSiglaColaborador" class="col-sm-1 control-label">Sigla</label>
-                          <div id="siglaColaborador" class="col-sm-2">
-                              <input type="text" class="form-control" id="inputSiglaColaborador" placeholder="Ex: AJ" maxlength="5" required>
-                          </div>
                         </div>
                         <hr>
                         <div class="form-group">
@@ -952,12 +979,19 @@
                                 <input class="form-control" id="inputNumero" type="number" name="num" size="5">
                             </div>
 
-                            <label class="col-sm-1 col-form-label">Complemento</label>
+                            <label class="col-sm-2 col-form-label">Complemento</label>
                             <div class="col-sm-2">
                                 <input class="form-control" id="inputComplemento" type="text" name="complem" size="10" maxlength="45">
                             </div>
                         </div>
                         <div class="form-group">
+                            <div class="col-sm-2">
+                              <label>
+                                <input id="checkResidencia" type="checkbox" class="minimal">
+                                Residência Própria
+                              </label>
+                            </div>
+                            <div class="col-sm-2"></div>
                             <div class="col-sm-2">
                               <label>
                                 <input id="checkDefMotor" type="checkbox" class="minimal">
@@ -969,30 +1003,24 @@
                                 <input id="checkDefVisual" type="checkbox" class="minimal">
                                 Deficiência Visual
                               </label>
-                            </div>
-                            <div class="col-sm-2">
+                            </div><div class="col-sm-2">
                               <label>
                                 <input id="checkDefAuditiva" type="checkbox" class="minimal">
                                 Deficiência Auditiva
                               </label>
                             </div>
-                            <label for="inputReabilitacao" class="col-sm-2 control-label">Observação de Reabilitação</label>
-                            <div id="reabilitacao" class="col-sm-4">
-                                <textarea id="inputReabilitacao" class="textarea" placeholder="Obs." style="width: 100%; height: 60px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;" maxlength="150"></textarea>
-                            </div>
                         </div>
                         <div class="form-group">
-                            <div class="col-sm-2">
-                              <label>
-                                <input id="checkResidencia" type="checkbox" class="minimal">
-                                Residência Própria
-                              </label>
-                            </div>
                             <div class="col-sm-2">
                               <label>
                                 <input id="checkFgts" type="checkbox" class="minimal">
                                 Comprada com Recursos do FGTS
                               </label>
+                            </div>
+                            <div class="col-sm-1"></div>
+                            <label for="inputReabilitacao" class="col-sm-3 control-label">Observação de Reabilitação</label>
+                            <div id="reabilitacao" class="col-sm-4">
+                                <textarea id="inputReabilitacao" class="textarea" placeholder="Obs." style="width: 100%; height: 60px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;" maxlength="150"></textarea>
                             </div>
                         </div>
                         <div class="form-group">
@@ -1168,33 +1196,7 @@
                             <label for="comboOrgaoRg" class="col-sm-1 control-label"><center>Orgão Emissor do RG</center></label>
                             <div class="col-sm-2">
                               <select id="comboOrgaoRg" class="form-control select2" style="width: 100%;" >
-                                <option value="SSP - AC">AC</option>
-                                <option value="SSP - AL">AL</option>
-                                <option value="SSP - AP">AP</option>
-                                <option value="SSP - AM">AM</option>
-                                <option value="SSP - BA">BA</option>
-                                <option value="SSP - CE">CE</option>
-                                <option value="SSP - DF">DF</option>
-                                <option value="SSP - ES">ES</option>
-                                <option value="SSP - GO">GO</option>
-                                <option value="SSP - MA">MA</option>
-                                <option value="SSP - MS">MS</option>
-                                <option value="SSP - MT">MT</option>
-                                <option value="SSP - MG">MG</option>
-                                <option value="SSP - PA">PA</option>
-                                <option value="SSP - PB">PB</option>
-                                <option value="SSP - PR">PR</option>
-                                <option value="SSP - PE">PE</option>
-                                <option value="SSP - PI">PI</option>
-                                <option value="SSP - RJ">RJ</option>
-                                <option value="SSP - RN">RN</option>
-                                <option value="SSP - RS">RS</option>
-                                <option value="SSP - RO">RO</option>
-                                <option value="SSP - RR">RR</option>
-                                <option value="SSP - SC">SC</option>
-                                <option value="SSP - SP">SP</option>
-                                <option value="SSP - SE">SE</option>
-                                <option value="SSP - TO">TO</option>
+                              <option></option>
                               </select>
                             </div>
                             <div class="col-sm-3">
@@ -1423,118 +1425,22 @@
                       </div>
                     </form>
                   </div>
-
-                  <div class="tab-pane active" id="proposta">
-                    <form class="form-horizontal" id="formProposta">
-                        <div class="form-group">
-                            <h4 class="col-sm-6"><b>Proposta de Serviço</b></h4>
-                        </div>
-                        <div class="form-group">
-                            <label for="comboClienteProposta" class="col-sm-1 control-label">Cliente</label>
-                            <div class="col-sm-5">
-                              <select id="comboClienteProposta" class="form-control select2" style="width: 100%;" required="">
-                              <option></option>
-                              </select>
-                            </div>
-                            <div class="col-sm-2"></div>
-                            <label for="comboContato" class="col-sm-1 control-label">Contato</label>
-                            <div class="col-sm-2">
-                              <select id="comboContato" class="form-control select2" style="width: 100%;">
-                                  <option></option>
-                              </select>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="inputEscopo" class="col-sm-1 control-label">Escopo</label>
-                            <div id="inputEscopo" class="col-sm-10">
-                                <textarea id="compose-textarea-escopo" class="form-control" style="height: 150px"></textarea>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <h4 class="col-sm-6"><b>Obrigações da Contratada</b></h4>
-                        </div>
-                        <div class="form-group" id="obrigacoesContratado">
-                            <label class="col-sm-3 control-label"><i>Checkbox</i></label>
-                        </div>
-                        <div class="form-group">
-                            <h4 class="col-sm-6"><b>Obrigações da Contratante</b></h4>
-                        </div>
-                        <div class="form-group" id="obrigacoesContratante">
-                            <label class="col-sm-3 control-label"><i>Checkbox</i></label>
-                        </div>
-                        <div class="form-group">
-                            <h4 class="col-sm-6"><b>Condições Comerciais</b></h4>
-                        </div>
-                        <div class="form-group" id="obrigacoesContratante">
-                            <label class="col-sm-3 control-label"><i>Checkbox</i></label>
-                        </div>
-                        <hr>
-                        <div class="form-group">
-                            <h5 class="col-sm-1"><br><br><b>Serviços</b></h5>
-                            <div class=" col-md-10">
-                                <table class="table table-bordered">
-                                    <tbody><tr>
-                                      <th style="width: 10px">#</th>
-                                      <th>Atividade</th>
-                                      <th style="width: 80px">Qtde</th>
-                                    </tr>
-                                    <tr>
-                                      <td><input type="checkbox" class="minimal"></td>
-                                      <td></td>
-                                      <td><input type="number" class="form-control"></td>
-                                    </tr>
-                                  </tbody>
-                                </table>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="inputNotaPreco" class="col-sm-1 control-label"><br><br><br>Notas</label>
-                            <div id="inputNotaPreco" class="col-sm-10">
-                                <textarea id="compose-textarea-preco" class="form-control" style="height: 150px"></textarea>
-                            </div>
-                        </div>
-                        <hr>
-                    </form>
-                  </div>
-                    <!-- /.tab-pane -->
+                  <!-- /.tab-pane -->
                     <div class="tab-pane" id="norma">
                     <form class="form-horizontal">
 
                     </form>
                   </div>
                   <!-- /.tab-pane -->
-                  <div class="tab-pane" id="os">
+                  <div class="tab-pane active" id="os">
                     <form class="form-horizontal" id="formOS">
                         <div class="form-group">
-                            <h4 class="col-sm-6" onclick="enviaForm(formOS);"><b>Ordem de Serviço</b></h4>
+                            <h4 class="col-sm-6"><b>Ordem de Serviço</b></h4>
                         </div>
                         <div class="form-group">
                             <label for="comboClienteOs" class="col-sm-1 control-label">Cliente</label>
-                            <div class="col-sm-5">
-                              <select id="comboClienteOs" class="form-control select2" style="width: 100%;" required="">
-                              <option></option>
-                              </select>
-                            </div>
-                            <label for="comboLocal" class="col-sm-1 control-label">Local</label>
                             <div class="col-sm-2">
-                              <select id="comboLocal" class="form-control select2" style="width: 100%;">
-                                  <option>Escritório</option>
-                                  <option>Cliente</option>
-                                  <option>Laboratório</option>
-                                  <option>Cliente + Lab.</option>
-                              </select>
-                            </div>
-                            <label for="comboInspetor" class="col-sm-1 control-label">Inspetor</label>
-                            <div class="col-sm-1">
-                              <select id="comboInspetor" class="form-control select2" style="width: 100%;" required>
-                              <option></option>
-                              </select>
-                            </div>  
-                        </div>
-                        <div class="form-group">
-                            <label for="comboDescricao" class="col-sm-1 control-label">Descrição</label>
-                            <div class="col-sm-5">
-                              <select id="comboDescricao" class="form-control select2" style="width: 100%;" required="">
+                              <select id="comboClienteOs" class="form-control select2" style="width: 100%;" required="">
                               <option></option>
                               </select>
                             </div>
@@ -1547,41 +1453,45 @@
                                   <input type="text" class="form-control pull-right" id="datepickerSolicitacao">
                                 </div>
                             </div>
+                            <label for="inputHorasQtd" class="col-sm-1 control-label">Horas/Qtd</label>
+                            <div class="col-sm-2">
+                                <input id="inputHorasQtd" type="number" class="form-control" >
+                            </div>
+                            <label for="comboLocal" class="col-sm-1 control-label">Local</label>
+                            <div class="col-sm-2">
+                              <select id="comboLocal" class="form-control select2" style="width: 100%;">
+                                  <option>Escritório</option>
+                                  <option>Cliente</option>
+                                  <option>Laboratório</option>
+                                  <option>Cliente + Lab.</option>
+                              </select>
+                            </div>
                         </div>
                         <div class="form-group">
-                            <label for="inputHoras" class="col-sm-1 control-label">Horas</label>
-                            <div class="col-sm-1 bootstrap-timepicker">
-                                <input id="inputHoras" type="text" class="form-control timepicker">
+                            <label for="comboDescricao" class="col-sm-1 control-label">Descrição</label>
+                            <div class="col-sm-3">
+                              <select id="comboDescricao" class="form-control select2" style="width: 100%;" required="">
+                              <option></option>
+                              </select>
                             </div>
-                            <label for="inputQuantidade" class="col-sm-1 control-label">Quantidade</label>
+                            <div class="col-sm-6">
+                            </div>
+                            <label for="comboInspetor" class="col-sm-1 control-label">Inspetor</label>
                             <div class="col-sm-1">
-                                <input id="inputQuantidade" type="number" class="form-control" >
-                            </div>
-                            <label for="inputExtras" class="col-sm-1 control-label">Hrs. Extras</label>
-                            <div class="col-sm-1 bootstrap-timepicker">
-                                <input id="inputExtras" type="text" class="form-control timepicker" >
-                            </div>
-                            <label for="inputNoturnas" class="col-sm-1 control-label">Hrs. Noturnas</label>
-                            <div class="col-sm-1 bootstrap-timepicker">
-                                <input id="inputNoturnas" type="text" class="form-control timepicker" >
-                            </div>
-                            <label for="inputKm" class="col-sm-1 control-label">Custo KM</label>
-                            <div class="col-sm-1">
-                                <input id="inputKm" type="number" class="form-control" >
+                              <select id="comboInspetor" class="form-control select2" style="width: 100%;" required="">
+                              <option></option>
+                              </select>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="inputDetalhamento" class="col-sm-2 control-label">Detalhamento</label>
-                            <div id="Detalhamento" class="col-sm-7">
+                            <div id="inputDetalhamento" class="col-sm-7">
                                 <textarea id="inputDetalhamento" class="textarea" placeholder="Obs." style="width: 100%; height: 130px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;" maxlength="8000"></textarea>
                             </div>
                             <div class="col-sm-3">
-                                <br>
-                                <br>
-                                <br>
-                                <br>
-                                <center><button type="submit" class="btn btn-success" onclick="formatarDatas(['datepickerSolicitacao']); enviaForm('formOS');">Cadastrar</button></center>
-                            </div>
+                            <br><br>
+                            <center><button type="submit" class="btn btn-success" onclick="enviaForm(formOS);">Cadastrar</button></center>
+                        </div>
                         </div>
                     </form>
                   </div>
@@ -1607,19 +1517,11 @@
                                   <input type="text" class="form-control pull-right" id="reservation">
                                 </div>
                             </div>
-                            <div class="col-sm-3">
-                                <label onclick="show_hide('servicosDemonstrativo'); clearChecks();"><input id="checkServicosDemonstrativo" type="checkbox" class="minimal-red" checked>Todos os Serviços</label>
-                            </div>
-                        </div>
-                        <div class="form-group" id="servicosDemonstrativo" style="display: none">
-                            <div class="col-sm-3">
-                                <label><input id="checkSalarioFamilia" type="radio" class="minimal" checked>Todos os Serviços</label>
-                            </div>
                         </div>
                     </form>
                   </div>
                     
-                <div class="tab-pane" id="atualizar">
+                <div class="tab-pane" id="Atualizar">
                     <form class="form-horizontal">
                         <div class="form-group">
                             <h4 class="col-sm-6"><b>Atualização de Dados</b></h4>
@@ -1849,8 +1751,6 @@
 <script src="../dist/js/adminlte.min.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="../dist/js/demo.js"></script>
-<!-- Bootstrap WYSIHTML5 -->
-<script src="../plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
 <!-- Page script -->
 <script>
   $(function () {
@@ -1917,7 +1817,6 @@
     });
     $('#datepickerSolicitacao').datepicker({
       autoclose: true
-      //format: 'yyyy-mm-dd'
     });
       
     //iCheck for checkbox and radio inputs
@@ -1928,33 +1827,36 @@
       
     //Timepicker
     $(".timepicker").timepicker({
-        showInputs: false, 
-        showSeconds: true,
-        showMeridian: false,
-        defaultTime: false, 
-        minuteStep: 5
+      showInputs: false
     });
-      
-    //Add text editor
-    $("#compose-textarea-escopo").wysihtml5();
-    $("#compose-textarea-preco").wysihtml5();
-      
-    //Red color scheme for iCheck
-    $('input[type="checkbox"].minimal-red, input[type="radio"].minimal-red').iCheck({
-      checkboxClass: 'icheckbox_minimal-red',
-      radioClass: 'iradio_minimal-red'
-    });    
-  }); 
+  });
 </script>
 <script>
     carregaCombo('Banco', 'comboBanco');
     carregaCombo('Cliente', 'comboClienteOs');
-    carregaCombo('Cliente', 'comboClienteProposta');
     carregaCombo('Cliente', 'comboDemonstrativoCliente');
     carregaCombo('Descrição', 'comboDescricao');
     carregaCombo('Inspetor', 'comboInspetor');
-    carregaLista('Serviço', 'servicosOferecidos');
-    carregaLista('Serviço', 'servicosDemonstrativo');
+    /*
+    for(var i = 0; i < 7; i++){
+        switch (i){
+            case 0: //carregaCombo('Certificação', 'comboCertificacaoFornecedor');
+            break;
+            case 1: //carregaCombo('Classificação', 'comboClassificacaoServico');
+            break;
+            case 2: carregaCombo('Banco', 'comboBanco');
+            break;
+            case 3: carregaCombo('Cliente', 'comboClienteOs');
+            break;
+            case 4: carregaCombo('Descrição', 'comboDescricao');
+            break;
+            case 5: carregaCombo('Inspetor', 'comboInspetor');
+            break;
+            case 6: //carregaCombo('Dado', 'comboAtualizaDado');
+            break;
+        }
+    }
+    */
 </script>
 </body>
 </html>

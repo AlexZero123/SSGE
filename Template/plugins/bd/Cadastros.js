@@ -31,23 +31,6 @@ function CadastrarColaborador(nome, sexo, dtNasc, localNasc, estdCivil, etinia, 
             xmlhttp.send();
     }
 
-function CadastrarOS(dtPedido, horas, qtde, custoKM, extras, noturnas, cliente, local, colaborador, servico, detalhamento, produto)
-    {
-		alert('cadastrando os');
-        var xmlhttp = new XMLHttpRequest();
-            var url = "http://localhost/%5bbancos%5d/sqp/cadastroos.php?dtPedido=" + dtPedido + "&horas='" + horas + "'&qtde='" + qtde + "'&custoKM='" + custoKM + "'&detalhamento='" + detalhamento + "'&produto='" + produto + "'&servico='" + servico + "'&cliente=" + cliente + "'&extras='" + extras + "'&noturnas='" + noturnas + "'&colaborador='" + colaborador + "'&local='" + local +  "';";
-            xmlhttp.onreadystatechange=function() 
-            {
-                if (xmlhttp.readyState == 4 && xmlhttp.status == 200) 
-                {
-                    ConectaServidorF(xmlhttp.responseText);
-                }
-            }
-            xmlhttp.open("GET", url, true);
-            xmlhttp.send();
-    }
-
-var dados = {};
 
 function CadastrarServico(descricao, prazo)
     {
@@ -65,46 +48,32 @@ function CadastrarServico(descricao, prazo)
             xmlhttp.send();
     }
 
-function enviaForm(ident){
-    var form = $(ident).closest('form');
-    // Cria um objeto dados onde será salvo os valores dos inputs
-    dados = {};
-    var valores = []
-    var ind;
-    // Cria um laço que percorre todos os input do formulário
-    $('input', form).each(function(){
-        // Pega o name do input atual do laço
-        ind = $(this).attr('id');
-        // Adiciona um objeto com o name do formulário e o seu valor
-        if(dados[ind] == ""){dados[ind] = null}
-        dados[ind] = $(this).val();
-        valores.push(dados[ind]);
-        //alert(ind + " - " + dados[ind]);
-    });
-    $('select', form).each(function(){
-        ind = $(this).attr('id');
-        dados[ind] = $(this).val();
-        valores.push(dados[ind]);
-        //alert(ind + " - " + dados[ind]);
-    });
-    $('textarea', form).each(function(){
-        ind = $(this).attr('id');
-        dados[ind] = $(this).val();
-        valores.push(dados[ind]);
-        //alert(ind + " - " + dados[ind]);
-    });
-    var identString = ident.toString();
-	alert(identString.valueOf());
-    switch (identString.valueOf()){
-        case 'formOS':
-            alert(oi);
-            CadastroOS(null, null, null, null, null, null, null, null, null, null, null, null);
-            //alert(valores);
-        break;
-    }/*
-    if (ident == 'formOS'){
-		alert(oi);
-	}
+function enviaForm(id){
+    /*$(id).submit(function(){
+
+      var answer = $("input[name='cbn']:checked").val();
+      var question = $(".thide").val();
+      var button = $(this).find('input[type="submit"]');
+      button.prop("disabled", true).val("respondido");
+
+      $.ajax({
+        type: "GET",
+        url: "proc_update_teste.php",
+         data: {
+              'campo1': answer,
+              'campo2': question,
+            },
+        success: function(result){              
+              answer = $("input[name='cbn']:checked").parent().css('background', 'gray');
+              answer = $("input[name='cbn']").prop('disabled',true);
+              var question = $(".thide").val('');
+              var view = $('#resultSend').html(result);
+            }
+      });      
+      return false;
+    }); 
     */
+    
+    alert(document.getElementById(id).getElementsByTagName('input')[1].value);
 }
 
