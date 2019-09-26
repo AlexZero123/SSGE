@@ -34,6 +34,9 @@
 
   <!-- Google Font -->
   <link rel="stylesheet" href="build/css/SourceSansPro.css">
+	<script>
+		if (localStorage.getItem("username-colab") == null && localStorage.getItem("password-colab") == null) {window.location='pages/login.html';}
+	</script>
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 <!-- Site wrapper -->

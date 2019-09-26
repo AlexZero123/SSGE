@@ -5,8 +5,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>GF RPG | Log in</title>
   <script>
-	localStorage.setItem("history", "OK");
-    if (localStorage.getItem("email") != null) {window.location='lockscreen.html';}
+	//localStorage.setItem("history", "OK");
+    //if (localStorage.getItem("email") != null) {window.location='lockscreen.html';}
   </script>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
@@ -34,13 +34,13 @@
 <body class="hold-transition login-page">
 <div class="login-box">
   <div class="login-logo">
-    <a href="../index2.html"><b>GF</b>RPG</a>
+    <a href=""><b>GF</b>RPG</a>
   </div>
   <!-- /.login-logo -->
   <div class="login-box-body">
     <p class="login-box-msg">Sign in to start your session</p>
 
-    <form action="../index.html" method="post">
+    <form action="" method="post">
       <div class="form-group has-feedback">
         <input id="email" type="text" class="form-control" placeholder="E-mail">
         <span class="glyphicon glyphicon-user form-control-feedback"></span>
@@ -59,7 +59,7 @@
         </div>
         <!-- /.col -->
         <div class="col-xs-4">
-          <button type="submit" onclick="Gravar();" class="btn btn-primary btn-block btn-flat">Sign In</button>
+          <button type="submit" onclick="basic.Gravar();" class="btn btn-primary btn-block btn-flat">Sign In</button>
         </div>
         <!-- /.col -->
       </div>
@@ -74,7 +74,7 @@
     </div>
     <!-- /.social-auth-links -->
     <a href="#">I forgot my password</a><br>
-    <a onclick="localStorage.clear();" href="../index.html" class="text-center">Register a new membership</a>
+    <a onclick="localStorage.clear();" href="" class="text-center">Register a new membership</a>
 
   </div>
   <!-- /.login-box-body -->
@@ -87,27 +87,12 @@
 <script src="../bootstrap/js/bootstrap.min.js"></script>
 <!-- iCheck -->
 <script src="../plugins/iCheck/icheck.min.js"></script>
+
+<script src="../plugins/interactions/basic.js"></script>
 <script>
-    
-    function Gravar()
-    {
-        var gravaemail = document.getElementById('email').value;
-        var gravasenha = document.getElementById('senha').value;
-        var xmlhttp = new XMLHttpRequest();
-        var url = "http://localhost/lista_usuarios_json.php?email=" + gravaemail; //https:...
-        xmlhttp.onreadystatechange=function() {
-        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) { ConectaServidor(xmlhttp.responseText); }
-        }
-        xmlhttp.open("GET", url, true);
-        xmlhttp.send();
-        function ConectaServidor(response) {
-        var dados = JSON.parse(response); //faz a conversão do texto da WEB para JSON
-        localStorage.setItem("email", gravaemail);
-        localStorage.setItem("senha", gravasenha);
-        localStorage.setItem("nome", dados[0].nome);
-    }  
-    }
-    
+	
+	const basic = new Basic();
+	
   $(function () {
     $('input').iCheck({
       checkboxClass: 'icheckbox_square-blue',
