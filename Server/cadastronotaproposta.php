@@ -9,11 +9,10 @@ mb_regex_encoding('UTF8');
 	{
 		try { 
 			$conecta = new PDO("mysql:host=$servidor;dbname=$banco", $usuario , $senha); //istancia a classe PDO
-			$comandoSQL = "insert into servico values(null, '".$_GET['descricao']."', ".$_GET['prazo'].")";
+			$comandoSQL = "insert into nota_proposta values(null, '".$_GET['nota']."', null, (select max(Cliente_has_Servico_id) from proposta));";
             $grava = $conecta->prepare($comandoSQL); //testa o comando SQL
-			$grava->execute(array());
-            echo($comandoSQL);
-        } catch(PDOException $e) { // casso retorne erro
+			$grava->execute(array()); 			
+		} catch(PDOException $e) { // casso retorne erro
 			echo('Deu erro: ' . $e->getMessage()); 
 		}
 	} 

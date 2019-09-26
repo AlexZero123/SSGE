@@ -15,7 +15,8 @@ $(document).ready(function () {
             if (validacep.test(cep)) {
 
                 //Preenche os campos com "..." enquanto consulta webservice.
-                $("#inputEndereco").val("aguarde...");
+                $("#inputLogradouro").val("aguarde...");
+                $("#inputBairro").val("aguarde...");
                 $("#inputCidade").val("aguarde...");
                 $("#inputUf").val("aguarde...");
 
@@ -24,7 +25,8 @@ $(document).ready(function () {
 
                     if (!("erro" in dados)) {
                         //Atualiza os campos com os valores da consulta.
-                        $("#inputEndereco").val(dados.logradouro + ', ' + dados.bairro);
+                        $("#inputLogradouro").val(dados.logradouro);
+                        $("#inputBairro").val(dados.bairro);
                         $("#inputCidade").val(dados.localidade);
                         $("#inputUf").val(dados.uf);
                     } //end if.
